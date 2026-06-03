@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nova Hub - Premium Earning</title>
+    <!-- Premium Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #eef2f6;
+            color: #2d3748;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 40px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: #ffffff;
+            min-height: 100vh;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        /* Top Header Section */
+        .header {
+            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px 45px 20px;
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        }
+
+        .logo-container {
+            width: 95px;
+            height: 95px;
+            background: white;
+            border-radius: 25px;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            overflow: hidden; 
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            background-color: #ffffff;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            object-position: center;
+        }
+
+        .main-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .sub-text-1 {
+            font-size: 15px;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 15px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .sub-text-2 {
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        /* Proofs Section */
+        .proof-section {
+            padding: 30px 20px 15px 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .proof-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .proof-card {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 18px;
+            padding: 15px;
+            text-align: center;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .proof-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .proof-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .proof-placeholder-text {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .proof-badge {
+            background: #10b981;
+            color: white;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-top: 8px;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Animated CTA */
+        .cta-container {
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .telegram-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0088cc 0%, #00aaff 100%);
+            color: white;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 20px;
+            font-size: 19px;
+            font-weight: 700;
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .telegram-btn svg {
+            width: 28px;
+            height: 28px;
+            margin-right: 12px;
+            fill: white;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4); }
+            50% { transform: scale(1.04); box-shadow: 0 12px 30px rgba(0, 136, 204, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 136, 204, 0.4); }
+        }
+
+        /* Live Registration Counter */
+        .live-counter-box {
+            margin-top: 15px;
+            background: #f1f5f9;
+            padding: 12px;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #ef4444;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: blink 0.5s infinite; 
+            box-shadow: 0 0 8px #ef4444;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        .live-text {
+            font-size: 13px;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .dynamic-number {
+            color: #2563eb;
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        /* Premium Benefits Section */
+        .benefits-section {
+            padding: 20px;
+        }
+
+        .benefits-box {
+            border: 2px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 25px 20px;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .benefits-title {
+            color: #0f172a;
+            font-size: 19px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefits-title span {
+            margin-right: 10px;
+            background: #10b981;
+            color: white;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #334155;
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+
+        .check-icon {
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        /* Special Gift Code Box */
+        .gift-box {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border: 1px solid #fde68a;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 20px;
+            display: flex;
+            align-items: flex-start;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .gift-icon {
+            font-size: 24px;
+            margin-right: 12px;
+        }
+
+        .gift-content h4 {
+            color: #b45309;
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .gift-content p {
+            color: #92400e;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Premium Header -->
+        <div class="header">
+            <div class="logo-container">
+                <!-- Yahan path ko 'images/' ke sath update kar diya hai -->
+                <img src="images/C5DA5567-EE1D-4F4C-B7A7-9DA37C70084B.jpeg" alt="Nova Hub Logo">
+            </div>
+            <h1 class="main-title">Nova Hub</h1>
+            <div class="sub-text-1">
+                🚀💸 Start earning ₹500-₹800 Daily! Join our exclusive community today. 💸🎉
+            </div>
+            <div class="sub-text-2">
+                📱 Get the Official App Link in Telegram!<br>
+                <strong>Register & start your earning journey now! 💰</strong>
+            </div>
+        </div>
+
+        <!-- Payment Proof Section -->
+        <div class="proof-section">
+            <div class="section-title">Verified Withdrawals</div>
+            <div class="proof-container">
+                <div class="proof-card">
+                    <!-- ADD PROOF IMAGE HERE LATER -->
+                    <span class="proof-placeholder-text">Live Withdrawal</span>
+                    <span class="proof-badge">₹4,230 Success</span>
+                </div>
+                <div class="proof-card">
+                    <!-- ADD PROOF IMAGE HERE LATER -->
+                    <span class="proof-placeholder-text">Account Credited</span>
+                    <span class="proof-badge">₹216 Success</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated Call To Action -->
+        <div class="cta-container">
+            <!-- Yahan se target="_blank" hata diya hai taaki phone mein direct khul jaye -->
+            <a href="https://t.me/+vi60byJLk380OTY1" class="telegram-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.36-.49.99-.74 3.88-1.69 6.47-2.8 7.77-3.32 3.7-1.49 4.46-1.75 4.96-1.76.11 0 .36.03.52.16.13.1.17.24.19.34.02.07.03.22.01.3z"/>
+                </svg>
+                Join Telegram Channel
+            </a>
+            
+            <!-- SUPER FAST Live Registration Counter -->
+            <div class="live-counter-box">
+                <div class="live-dot"></div>
+                <div class="live-text">
+                    Live Status: <span class="dynamic-number" id="userCount">14,285</span> Users Registered!
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Benefits Section -->
+        <div class="benefits-section">
+            <div class="benefits-box">
+                <div class="benefits-title">
+                    <span>✔</span> Premium Benefits
+                </div>
+                <ul class="benefits-list">
+                    <li class="benefits-item"><span class="check-icon">✓</span> 100% Trusted & Verified Platform</li>
+                    <li class="benefits-item"><span class="check-icon">✓</span> Assured Daily Income & Withdrawals</li>
+                    <li class="benefits-item"><span class="check-icon">✓</span> Lightning Fast Instant Payouts</li>
+                </ul>
+
+                <!-- Gift Code Box -->
+                <div class="gift-box">
+                    <div class="gift-icon">🎁</div>
+                    <div class="gift-content">
+                        <h4>Exclusive Daily Rewards</h4>
+                        <p>Join now to claim your <strong>Free Gift Codes worth ₹20-₹30</strong> dropped daily in the channel. Limited spots available!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript - FAST UPDATING COUNTER -->
+    <script>
+        let currentUsers = 14285;
+        const userCountElement = document.getElementById('userCount');
+        
+        setInterval(function() {
+            let randomIncrease = Math.floor(Math.random() * 6) + 5; 
+            currentUsers += randomIncrease;
+            userCountElement.innerText = currentUsers.toLocaleString();
+        }, 100);
+    </script>
+</body>
+</html>
